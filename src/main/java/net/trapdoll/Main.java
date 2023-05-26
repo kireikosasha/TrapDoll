@@ -1,12 +1,13 @@
 package net.trapdoll;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 import static net.trapdoll.CommandManager.*;
 import static net.trapdoll.TrapDoll.*;
 
-public class Main {
+public class Main  {
 
     public static boolean work = true;
     public static boolean bytestringecrypt = true;
@@ -14,7 +15,7 @@ public class Main {
     public static boolean variablerename = true;
     public static boolean inclassswapper = true;
     public static int action;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         reset();
         message("""
@@ -26,7 +27,7 @@ public class Main {
         callSettings();
     }
 
-    public static void callSettings() {
+    public static void callSettings() throws IOException {
         work = true;
         message("""
                  [TRAPDOLL V1.0]\s
@@ -53,13 +54,14 @@ public class Main {
                 + bytestringecrypt + "\n ReName Variables: " + variablerename + "\n InClass Code Swapper: " + inclassswapper);
     }
 
-    public static void Start() {
+    public static void Start() throws IOException {
         work = false;
         message("$ Write your project path: \n Example: C://Users/Name/IdeaProjects/MyProject");
         Scanner getPath = new Scanner(System.in);
         File path = new File(getPath.nextLine());
         if (path.isDirectory()) {
-            TrapDoll(bytestringecrypt, extremeremaping, inclassswapper, variablerename);
+            File out = new File("C:/trapdoll_out/");
+            TrapDoll(bytestringecrypt, extremeremaping, inclassswapper, variablerename, path, out);
         } else { message("File is not directory! \nExit..."); callSettings();}
     }
     static void message(String s) { System.out.println(s); }

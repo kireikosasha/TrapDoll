@@ -1,5 +1,7 @@
 package net.trapdoll;
 
+import java.io.IOException;
+
 import static net.trapdoll.Main.Start;
 import static net.trapdoll.Main.*;
 
@@ -7,7 +9,7 @@ public class CommandManager {
 
     public static boolean booleanlast = true;
 
-    public static int command(String command) {
+    public static int command(String command) throws IOException {
         if (command.contains("/td") || command.contains("/trapdoll")) {
             if (command.contains("start")) { Start(); return 2; }
             if (command.contains("options")) { callOptions(); return 2; }
