@@ -9,7 +9,7 @@ public class CommandManager {
 
     public static boolean booleanlast = true;
 
-    public static int command(String command) throws IOException {
+    public static int command(String command) throws IOException, InterruptedException {
         if (command.contains("/td") || command.contains("/trapdoll")) {
             if (command.contains("start")) { Start(); return 2; }
             if (command.contains("options")) { callOptions(); return 2; }

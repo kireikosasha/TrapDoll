@@ -15,7 +15,7 @@ public class Main  {
     public static boolean variablerename = true;
     public static boolean inclassswapper = true;
     public static int action;
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         reset();
         message("""
@@ -27,7 +27,7 @@ public class Main  {
         callSettings();
     }
 
-    public static void callSettings() throws IOException {
+    public static void callSettings() throws IOException, InterruptedException {
         work = true;
         message("""
                  [TRAPDOLL V1.0]\s
@@ -54,7 +54,7 @@ public class Main  {
                 + bytestringecrypt + "\n ReName Variables: " + variablerename + "\n InClass Code Swapper: " + inclassswapper);
     }
 
-    public static void Start() throws IOException {
+    public static void Start() throws IOException, InterruptedException {
         work = false;
         message("$ Write your project path: \n Example: C://Users/Name/IdeaProjects/MyProject");
         Scanner getPath = new Scanner(System.in);
