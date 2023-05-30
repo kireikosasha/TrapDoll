@@ -60,7 +60,7 @@ public class Main  {
         Scanner getPath = new Scanner(System.in);
         File path = new File(getPath.nextLine());
         if (path.isDirectory()) {
-            File out = new File("C:/trapdoll_out/");
+            File out = new File("C:/trapdoll_out/" + path.getName());
             TrapDoll(bytestringecrypt, extremeremaping, inclassswapper, variablerename, path, out);
         } else { message("File is not directory! \nExit..."); callSettings();}
     }
